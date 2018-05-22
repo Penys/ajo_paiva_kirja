@@ -1,8 +1,8 @@
-/*import React, { Component } from "react";
+import React, { Component } from "react";
 import { Button } from "react-native";
 import { AppRegistry, TextInput, StyleSheet, View } from "react-native";
 
-export default class CreateListing extends Component {
+export default class NewItemScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = { text: "pick-up address" };
@@ -25,6 +25,7 @@ export default class CreateListing extends Component {
         />
 
         <Button
+          style={styles.upperButtons}
           title={this.state4.text}
         />
 
@@ -34,33 +35,34 @@ export default class CreateListing extends Component {
 
         <TextInput
           style={styles.textInput}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={text2 => this.setState({ text })}
           value={this.state2.text}
         />
 
-        <Button style={styles.buttons}
+        <Button style={styles.upperButtons}
           title={this.state4.text}
         />
       </View>
 
         <TextInput
-          style={ styles.orderer }
-          multiline={true}
+          style={ styles.infoText }
+          multiline
           numberOfLines={4}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={text3 => this.setState({ text })}
           value={this.state3.text}
         />
-
+        <View style={styles.lowerButtons}>
           <Button
+            style={styles.buttons}
             title="Rahtikirja"
 
           />
 
         <Button
+          style={styles.buttons}
           title="OK!"
-
-
         />
+      </View>
 
       </View>
     );
@@ -69,23 +71,35 @@ export default class CreateListing extends Component {
 const styles = StyleSheet.create({
 
   allItems: {
-    padding: 15,
-      flex: 1,
-      alignItems: 'center'
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
   },
   orderer: {
-
+    padding: 15,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
 },
   textInput: {
+    marginRight: 15,
     flex: 0.8,
-    height: 40,
+    height: 60,
     borderColor: "gray",
     borderWidth: 1
+},
+  infoText: {
+    height: 150
+
   },
-    buttons: {
+    upperButtons: {
+      height: 60,
       flex: 0.2,
       color: '#841584'
+    },
+    lowerButtons: {
+      padding: 15,
+      height: 60
     }
+
 })
