@@ -15,7 +15,6 @@ const HomeStack = createStackNavigator({
     },
   },
 })
-
 const NewItemStack = createStackNavigator({
   Home: {
     screen: NewItemScreen,
@@ -24,7 +23,6 @@ const NewItemStack = createStackNavigator({
     },
   },
 })
-
 const CalendarStack = createStackNavigator({
   Home: {
     screen: CalendarScreen,
@@ -33,7 +31,6 @@ const CalendarStack = createStackNavigator({
     },
   },
 })
-
 export default createBottomTabNavigator({
   Home: HomeStack,
   NewItem: NewItemStack,

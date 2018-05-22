@@ -1,11 +1,12 @@
 import React from 'react'
-import DeliveryList from '../components/DeliveryList'
 
+import DeliveryList from '../components/DeliveryList'
 import dummyData from '../dummies/dummyData.json'
 
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
+    console.log(props)
     this.state = {
       deliveries: null,
       isLoading: false,
@@ -24,13 +25,11 @@ class HomeScreen extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props
     const { deliveries, isLoading } = this.state
     return (
       <DeliveryList
         deliveries={deliveries}
         isLoading={isLoading}
-        navigation={navigation}
         onLoad={this.onLoad}
       />
     )
