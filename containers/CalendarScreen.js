@@ -1,5 +1,9 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+} from 'react-native'
 
 const CalendarScreen = () => (
   <View style={styles.container}>

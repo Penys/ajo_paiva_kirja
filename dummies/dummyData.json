@@ -1,0 +1,29 @@
+[
+   {
+        "date": "10-05-2018",
+        "pickupAddress": "Liisankatu 8 A",
+        "deliveryAddress": "Mannerheimintie 9",
+        "packageInfo": "Kuormassa perunoita 200kg",
+        "cargoPayer": "0",
+        "cargoBook": "true",
+        "id": "1"
+    },
+    {
+        "date": "09-05-2018",
+        "pickupAddress": "Liisankatu 8 A",
+        "deliveryAddress": "Mannerheimintie 9",
+        "packageInfo": "Kuormassa kurkkua 200kg",
+        "cargoPayer": "1",
+        "cargoBook": "false",
+        "id": "2"
+    },
+    {
+        "date": "08-05-2018",
+        "pickupAddress": "Liisankatu 8 A",
+        "deliveryAddress": "Mannerheimintie 9",
+        "packageInfo": "Kuormassa mansikoita 200kg",
+        "cargoPayer": "2",
+        "cargoBook": "true",
+        "id": "3"
+    }
+]
