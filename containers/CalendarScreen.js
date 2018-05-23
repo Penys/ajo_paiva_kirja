@@ -1,11 +1,14 @@
 import React from 'react'
 import { Text, View, StyleSheet } from 'react-native'
 
-const CalendarScreen = () => (
-  <View style={styles.container}>
-    <Text>Calendar</Text>
-  </View>
-)
+const CalendarScreen = (props) => {
+  const { navigation } = props
+  return (
+    <View style={styles.container}>
+      <Text>Calendar</Text>
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
