@@ -1,55 +1,58 @@
-import React, { Component } from "react";
-import { Button } from "react-native";
-import { AppRegistry, TextInput, StyleSheet, View } from "react-native";
+import React from 'react'
+import { TextInput, StyleSheet, View, Button, Text } from 'react-native'
 
 export default class NewItemScreen extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { text: "pick-up address" };
-    this.state2 = { text: "delivery address" };
-    this.state3 = { text: "Info" };
-    this.state4 = { text: "rahti" };
+    super(props)
+    this.state = {
+      pickAddr: 'pick-up address',
+      delAddr: 'delivery address',
+      infoField: 'Info',
+      // payerBtn: 'rahti',
+    }
   }
 
   render() {
     return (
 
       <View style={styles.allItems}>
+        <Text style={styles.headerTitles}>Pick up Address</Text>
+        <View style={styles.orderer}>
+
+          <TextInput
+            style={styles.textInput}
+            onChangeText={text => this.setState({ pickAddr: text })}
+            value={this.state.pickAddr.text}
+          />
+
+          <Button
+            style={styles.upperButtons}
+            title="rahti"
+          />
+
+        </View>
+        <Text style={styles.headerTitles}>Delivery Address</Text>
 
         <View style={styles.orderer}>
 
-        <TextInput
-          style={styles.textInput}
-          onChangeText={text => this.setState({ text })}
-          value={this.state.text}
-        />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={text => this.setState({ delAddr: text })}
+            value={this.state.delAddr.text}
+          />
 
-        <Button
-          style={styles.upperButtons}
-          title={this.state4.text}
-        />
-
+          <Button
+            style={styles.upperButtons}
+            title="rahti"
+          />
         </View>
-
-        <View style={ styles.orderer }>
-
+        <Text style={styles.headerTitles}>Info</Text>
         <TextInput
-          style={styles.textInput}
-          onChangeText={text2 => this.setState({ text })}
-          value={this.state2.text}
-        />
-
-        <Button style={styles.upperButtons}
-          title={this.state4.text}
-        />
-      </View>
-
-        <TextInput
-          style={ styles.infoText }
+          style={styles.infoText}
           multiline
           numberOfLines={4}
-          onChangeText={text3 => this.setState({ text })}
-          value={this.state3.text}
+          onChangeText={text => this.setState({ infoField: text })}
+          value={this.state.infoField.text}
         />
         <View style={styles.lowerButtons}>
           <Button
@@ -58,48 +61,57 @@ export default class NewItemScreen extends React.Component {
 
           />
 
+
+        </View>
         <Button
           style={styles.buttons}
           title="OK!"
         />
-      </View>
 
       </View>
-    );
+    )
   }
 }
 const styles = StyleSheet.create({
 
   allItems: {
-          flex: 1,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   orderer: {
-    padding: 15,
+    // padding: 15,
     flexDirection: 'row',
-    justifyContent: 'space-between'
-},
+    justifyContent: 'space-between',
+  },
   textInput: {
     marginRight: 15,
     flex: 0.8,
     height: 60,
-    borderColor: "gray",
-    borderWidth: 1
-},
-  infoText: {
-    height: 150
-
+    borderColor: 'gray',
+    borderWidth: 1,
   },
-    upperButtons: {
-      height: 60,
-      flex: 0.2,
-      color: '#841584'
-    },
-    lowerButtons: {
-      padding: 15,
-      height: 60
-    }
+  infoText: {
+    // flex: 1,
+    // alignSelf: 'stretch',
+    padding: 15,
+    width: '80%',
+    flexDirection: 'row',
+    borderColor: 'gray',
+    borderWidth: 1,
+  },
+  upperButtons: {
+    height: 60,
+    flex: 0.2,
+    color: '#841584',
+  },
+  lowerButtons: {
+    padding: 15,
+    height: 60,
+  },
+  headerTitles: {
+    padding: 15,
+  },
 
 })
