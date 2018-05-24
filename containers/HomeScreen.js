@@ -5,50 +5,78 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { Icon } from 'react-native-elements'
-import { FlatList } from 'react-native-gesture-handler'
 
-const HomeScreen = (props) => {
-  const { navigation } = props
-  return (
-    <View style={styles.container}>
-      <FlatList
-        
-      />
-      <TouchableOpacity
-        style={styles.AddNewDelivery}
-        activeOpacity={0.5}
-        onPress={() => navigation.navigate('NewItem')}
-      >
-        <Icon
-          raised
-          reverse
-          name="plus"
-          type="entypo"
-          color="#FF0078"
+import DeliveryList from '../components/DeliveryList'
+import dummyData from '../dummies/dummyData.json'
+import colors from '../constants/colors'
+
+class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props)
+    this.state = {
+      deliveries: null,
+      isLoading: false,
+    }
+    this.onLoad = this.onLoad.bind(this)
+  }
+  componentDidMount() {
+    this.onLoad()
+  }
+  onLoad() {
+    this.setState({ isLoading: true })
+    this.setState({ deliveries: dummyData })
+    this.setState({ isLoading: false })
+  }
+  render() {
+    const { navigation } = this.props
+    const { deliveries, isLoading } = this.state
+    return (
+      <View style={styles.container}>
+        <DeliveryList
+          style={styles.deliveryListItem}
+          deliveries={deliveries}
+          isLoading={isLoading}
+          onLoad={this.onLoad}
         />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.Calendar}
-        activeOpacity={0.5}
-        onPress={() => navigation.navigate('Calendar')}
-      >
-        <Icon
-          raised
-          reverse
-          name="event"
-          color="#1966FC"
-        />
-      </TouchableOpacity>
-    </View>
-  )
+        <TouchableOpacity
+          style={styles.AddNewDelivery}
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('NewItem')}
+        >
+          <Icon
+            raised
+            reverse
+            name="plus"
+            type="entypo"
+            color="#FF0078"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.Calendar}
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('Calendar')}
+        >
+          <Icon
+            raised
+            reverse
+            name="event"
+            color="#1966FC"
+          />
+        </TouchableOpacity>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  deliveryList: {
   },
   AddNewDelivery: {
     position: 'absolute',
