@@ -17,13 +17,14 @@ const DeliveryList = (props) => {
       data={deliveries}
       renderItem={({ item }) => (
         <DeliveryListItem
+          style={styles.item}
           date={item.date}
           pickupAddress={item.pickupAddress}
           deliveryAddress={item.deliveryAddress}
           packageInfo={item.packageInfo}
         />
       )}
-      keyExtractor={delivery => `${delivery.id}`}
+      keyExtractor={delivery => `${delivery._id}`}
       refreshControl={
         <RefreshControl
           refreshing={isLoading}

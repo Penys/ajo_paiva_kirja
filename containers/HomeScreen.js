@@ -5,15 +5,14 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { Icon } from 'react-native-elements'
-
+import { getDeliveries } from '../api/delivery_api'
 import DeliveryList from '../components/DeliveryList'
-import dummyData from '../dummies/dummyData.json'
+
 import colors from '../constants/colors'
 
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props)
     this.state = {
       deliveries: null,
       isLoading: false,
@@ -25,8 +24,20 @@ class HomeScreen extends React.Component {
   }
   onLoad() {
     this.setState({ isLoading: true })
-    this.setState({ deliveries: dummyData })
-    this.setState({ isLoading: false })
+    getDeliveries()
+      .then((response) => {
+        this.setState({
+          deliveries: response,
+          isLoading: false,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({
+          deliveries: null,
+          isLoading: false,
+        })
+      })
   }
   render() {
     const { navigation } = this.props

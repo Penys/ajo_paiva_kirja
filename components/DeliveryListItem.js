@@ -6,8 +6,8 @@ import {
   SafeAreaView,
 } from 'react-native'
 import { Card } from 'react-native-elements'
-
 import PropTypes from 'prop-types'
+import colors from '../constants/colors'
 
 const DeliveryListItem = (props) => {
   const {
