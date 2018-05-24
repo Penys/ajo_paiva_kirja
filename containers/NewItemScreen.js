@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { TextInput, StyleSheet, View, Button, Text } from 'react-native'
 
 export default class NewItemScreen extends React.Component {
@@ -113,5 +114,6 @@ const styles = StyleSheet.create({
   headerTitles: {
     padding: 15,
   },
-
 })
+
+export default NewItemScreen
