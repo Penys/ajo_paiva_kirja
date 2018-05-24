@@ -1,5 +1,9 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import {
+  Text,
+  View,
+  StyleSheet,
+} from 'react-native'
 
 const CalendarScreen = (props) => {
   const { navigation } = props

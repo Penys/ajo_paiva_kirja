@@ -1,6 +1,11 @@
 import React from 'react'
-
-import { TextInput, StyleSheet, View, Button, Text } from 'react-native'
+import {
+  TextInput,
+  StyleSheet,
+  View,
+  Button,
+  Text,
+} from 'react-native'
 
 export default class NewItemScreen extends React.Component {
   constructor(props) {
@@ -12,36 +17,28 @@ export default class NewItemScreen extends React.Component {
       // payerBtn: 'rahti',
     }
   }
-
   render() {
     return (
-
       <View style={styles.allItems}>
         <Text style={styles.headerTitles}>Pick up Address</Text>
         <View style={styles.orderer}>
-
           <TextInput
             style={styles.textInput}
             onChangeText={text => this.setState({ pickAddr: text })}
             value={this.state.pickAddr.text}
           />
-
           <Button
             style={styles.upperButtons}
             title="rahti"
           />
-
         </View>
         <Text style={styles.headerTitles}>Delivery Address</Text>
-
         <View style={styles.orderer}>
-
           <TextInput
             style={styles.textInput}
             onChangeText={text => this.setState({ delAddr: text })}
             value={this.state.delAddr.text}
           />
-
           <Button
             style={styles.upperButtons}
             title="rahti"
@@ -59,22 +56,17 @@ export default class NewItemScreen extends React.Component {
           <Button
             style={styles.buttons}
             title="Rahtikirja"
-
           />
-
-
         </View>
         <Button
           style={styles.buttons}
           title="OK!"
         />
-
       </View>
     )
   }
 }
 const styles = StyleSheet.create({
-
   allItems: {
     flex: 1,
     flexDirection: 'column',
@@ -115,5 +107,3 @@ const styles = StyleSheet.create({
     padding: 15,
   },
 })
-
-export default NewItemScreen
