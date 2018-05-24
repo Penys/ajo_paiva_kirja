@@ -10,18 +10,30 @@ export default createStackNavigator(
       screen: HomeScreen,
       navigationOptions: {
         title: '23. toukokuuta 2018',
+        headerStyle: {
+          backgroundColor: '#FFBF00',
+        },
+        headerTintColor: '#131313',
       },
     },
     NewItem: {
       screen: NewItemScreen,
       navigationOptions: {
         title: 'Add New Delivery',
+        headerStyle: {
+          backgroundColor: '#FFBF00',
+        },
+        headerTintColor: '#131313',
       },
     },
     Calendar: {
       screen: CalendarScreen,
       navigationOptions: {
         title: 'Choose date',
+        headerStyle: {
+          backgroundColor: '#FFBF00',
+        },
+        headerTintColor: '#131313',
       },
     },
   },

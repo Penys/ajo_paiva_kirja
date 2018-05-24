@@ -5,11 +5,15 @@ import {
   TouchableOpacity,
 } from 'react-native'
 import { Icon } from 'react-native-elements'
+import { FlatList } from 'react-native-gesture-handler'
 
 const HomeScreen = (props) => {
   const { navigation } = props
   return (
     <View style={styles.container}>
+      <FlatList
+        
+      />
       <TouchableOpacity
         style={styles.AddNewDelivery}
         activeOpacity={0.5}
